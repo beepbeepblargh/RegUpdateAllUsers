@@ -451,8 +451,7 @@ Sub Load_Registry_For_Each_User(DAT_FILE)
         WScript.Echo "Updating the DEFAULT user profile which affects newly created profiles." & vbCrLf 
         Call LoadProfileHive(sPathToDatFile, "Default User Profile", DAT_FILE)
     Else
-        WScript.Echo "Unable to update the DEFAULT user profile, because it could not be found at: C:Users\Default" _
-            & vbCrLf & sPathToDatFile & vbCrLf
+        WScript.Echo "Unable to update the DEFAULT user profile, because it could not be found at: " & vbCrLf & sPathToDatFile & vbCrLf
     End If
          
     Set objRegistry = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\default:StdRegProv")
